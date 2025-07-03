@@ -3,10 +3,11 @@
 
 // Custom variables
 $baseurl: "{{ site.baseurl }}";
-$primary: #2c3e50;
+$primary: #e0e4e8; //#2c3e50;
 $secondary: #3498db;
 $accent: #e74c3c;
 $text: #222;
+$text-light: #f8f9fa;
 $text-muted: #6c757d;
 $dark: #343a40;
 $success: #28a745;
@@ -34,6 +35,10 @@ html, body {
     background: none;
 }
 
+body {
+    color: $text-light;
+}
+
 // --- Background ---
 .landing-bg.parallax {
     position: fixed;
@@ -56,21 +61,21 @@ html, body {
 }
 
 .central-box {
-    background: $card-bg;
-    border-radius: 1.5rem;
-    box-shadow: $shadow;
+    //background: $card-bg;
+    //border-radius: 1.5rem;
+    //box-shadow: $shadow;
     max-width: 1200px;
     width: 95%;
     margin: 0 auto;
-    padding: 2.5rem 2rem 2rem 2rem;
+    //padding: 2.5rem 2rem 2rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
     position: relative;
     z-index: 2;
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.3);
+    //backdrop-filter: blur(12px);
+    //border: 1px solid rgba(255,255,255,0.3);
 }
 
 // --- Avatar ---
