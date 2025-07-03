@@ -16,20 +16,20 @@ collections:
 navigation:
   education:
     - title: "Get Started"
-      url: "{{ site.baseurl }}/pages/get-started.html"
+      url: "/pages/get-started.html"
       icon: "fas fa-rocket"
     - title: "Enroll Now"
-      url: "{{ site.baseurl }}/pages/enroll.html"
+      url: "/pages/enroll.html"
       icon: "fas fa-user-plus"
     - title: "Register"
-      url: "{{ site.baseurl }}/pages/register.html"
+      url: "/pages/register.html"
       icon: "fas fa-user-edit"
   properties:
     - title: "Contact Agent"
-      url: "{{ site.baseurl }}/pages/contact.html"
+      url: "/pages/contact.html"
       icon: "fas fa-phone"
     - title: "Schedule Visit"
-      url: "{{ site.baseurl }}/pages/schedule.html"
+      url: "/pages/schedule.html"
       icon: "fas fa-calendar-alt"
 
 # Educational Materials Configuration

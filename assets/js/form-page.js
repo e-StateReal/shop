@@ -72,10 +72,13 @@ function displayItemInfo(itemId) {
     }
 }
 
+// Proxy to global getItemInfo from items-data.js, but avoid recursion if already global
 function getItemInfo(itemId) {
-    // This function is now provided by items-data.js
-    // It will return the item information or null if not found
-    return window.getItemInfo ? window.getItemInfo(itemId) : null;
+    // Use the getItemInfo from items-data.js if it exists and is not THIS function
+    if (window.getItemInfo && window.getItemInfo !== getItemInfo) {
+        return window.getItemInfo(itemId);
+    }
+    return null;
 }
 
 function updateFormFields(itemId) {

@@ -5,7 +5,7 @@ description: Register for our Investment Strategies Webinar
 permalink: /pages/register.html
 ---
 
-<div class="form-container">
+<div class="form-wrapper">
     <h1 class="form-title">📝 Register</h1>
     <p class="form-subtitle">Register for our exclusive real estate events and webinars</p>
     

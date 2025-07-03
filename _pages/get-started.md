@@ -5,7 +5,7 @@ description: Begin your real estate journey with e-State Real Store
 permalink: /pages/get-started.html
 ---
 
-<div class="form-container">
+<div class="form-wrapper">
     <h1 class="form-title">🚀 Get Started</h1>
     <p class="form-subtitle">Begin your real estate journey with our expert guidance</p>
     

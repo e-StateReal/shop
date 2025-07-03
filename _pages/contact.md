@@ -5,7 +5,7 @@ description: Contact our real estate agents for property inquiries
 permalink: /pages/contact.html
 ---
 
-<div class="form-container">
+<div class="form-wrapper">
     <h1 class="form-title">📞 Contact Agent</h1>
     <p class="form-subtitle">Get in touch with our expert real estate agents</p>
     

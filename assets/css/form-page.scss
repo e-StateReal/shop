@@ -1,4 +1,8 @@
+---
+---
+
 // Variables
+$baseurl: "{{ site.baseurl }}";
 $primary: #2c3e50;
 $secondary: #3498db;
 $accent: #e74c3c;
@@ -11,6 +15,186 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f8f9fa;
     color: $primary;
+    min-height: 100vh;
+}
+
+// Navbar improvements
+.navbar {
+    border-bottom: none;
+    background: rgba(255,255,255,0.96) !important;
+    box-shadow: 0 4px 24px rgba(44,62,80,0.07);
+    padding: 0.7rem 0;
+}
+.navbar .navbar-brand {
+    font-size: 1.7rem;
+    color: $primary !important;
+    font-weight: 800;
+    letter-spacing: -1px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.navbar .navbar-brand img {
+    border-radius: 50%;
+    border: 2px solid $secondary;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+    height: 44px;
+    width: 44px;
+    object-fit: contain;
+}
+.navbar-nav .nav-link {
+    font-weight: 600;
+    color: $primary !important;
+    transition: color 0.3s, border 0.3s;
+    margin: 0 0.7rem;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.2rem;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:hover {
+    color: $secondary !important;
+    border-bottom: 2px solid $secondary;
+    background: none;
+}
+.navbar-nav .dropdown-menu {
+  border: none;
+  box-shadow: 0 4px 16px rgba(44,62,80,0.09);
+  border-radius: 10px;
+  margin-top: 8px;
+  min-width: 200px;
+  background: #fff;
+}
+.navbar-nav .dropdown-item {
+  padding: 0.7rem 1.2rem;
+  font-weight: 500;
+  color: $primary;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  background: transparent;
+}
+.navbar-nav .dropdown-item:hover,
+.navbar-nav .dropdown-item:focus {
+  background: $secondary;
+}
+.navbar-nav .dropdown-item.active,
+.navbar-nav .dropdown-item[aria-current="page"] {
+  background: $secondary;
+  font-weight: 700;
+}
+
+// --- Background for full page (body) ---
+body.form-bg {
+    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100vw;
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+// --- Light background for form container ---
+// --- Light background for form container ---
+.form-container-bg {
+    background: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 8px 32px rgba(44,62,80,0.10);
+    padding: 2.2rem 1.5rem 2rem 1.5rem;
+    margin: 2.5rem auto;
+    max-width: 540px;
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    border: 1.5px solid #e9ecef;
+    position: relative;
+    overflow: hidden;
+}
+
+// Decorative gradient border effect
+
+
+// Form title and subtitle improvements
+.form-title {
+    color: $primary;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    font-size: 2.1rem;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    text-shadow: 0 2px 12px rgba(44,62,80,0.08);
+}
+.form-subtitle {
+    color: $secondary;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.15rem;
+    font-weight: 500;
+    opacity: 0.85;
+}
+
+// Form field improvements
+.form-label {
+    font-weight: 700;
+    color: $primary;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.01em;
+}
+.form-control, .form-select {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 0.85rem 1.1rem;
+    font-size: 1.05rem;
+    background: #f8f9fa;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+.form-control:focus, .form-select:focus {
+    border-color: $secondary;
+    box-shadow: 0 0 0 0.18rem rgba(52, 152, 219, 0.13);
+    background: #fff;
+}
+.form-control.is-invalid, .form-select.is-invalid {
+    border-color: $accent;
+    background: #fff0f0;
+}
+.invalid-feedback {
+    color: $accent;
+    font-size: 0.97rem;
+    margin-top: 0.2rem;
+}
+
+// Button improvements
+.btn-primary, .btn-success {
+    border: none;
+    padding: 0.8rem 2.2rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.08rem;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+}
+.btn-primary {
+    background: $secondary;
+    color: #fff;
+}
+.btn-primary:hover {
+    background: darken($secondary, 10%);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 18px rgba(52, 152, 219, 0.13);
+}
+.btn-success {
+    background: $success;
+    color: #fff;
+}
+.btn-success:hover {
+    background: darken($success, 10%);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 18px rgba(40, 167, 69, 0.13);
 }
 
 // Navbar styles
@@ -79,11 +263,21 @@ body {
 
 // Form styles
 .form-container {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    padding: 2.5rem;
-    margin-bottom: 2rem;
+    background: rgba(255,255,255,0.97);
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(44,62,80,0.10);
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    margin: 2.5rem auto;
+    max-width: 900px;
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    border: 1.5px solid #e9ecef;
+    position: relative;
+    z-index: 1;
 }
 
 .form-title {
@@ -334,3 +528,18 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 } 
+
+// Blurred background for form pages
+$form-blur-img: url('#{$baseurl}/assets/img/main_bg_backup.png');
+$form-blur-brightness: 0.97;
+$form-blur-amount: 10px;
+
+.form-blur-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  background: $form-blur-img center 100%/cover no-repeat fixed;
+  filter: blur($form-blur-amount) brightness($form-blur-brightness);
+  -webkit-filter: blur($form-blur-amount) brightness($form-blur-brightness);
+  pointer-events: none;
+}

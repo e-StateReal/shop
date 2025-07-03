@@ -5,7 +5,7 @@ description: Enroll in our Premium Real Estate Course
 permalink: /pages/enroll.html
 ---
 
-<div class="form-container">
+<div class="form-wrapper">
     <h1 class="form-title">📚 Enroll Now</h1>
     <p class="form-subtitle">Join our premium real estate education programs</p>
     

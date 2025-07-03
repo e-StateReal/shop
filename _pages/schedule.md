@@ -5,7 +5,7 @@ description: Schedule a property viewing with our agents
 permalink: /pages/schedule.html
 ---
 
-<div class="form-container">
+<div class="form-wrapper">
     <h1 class="form-title">📅 Schedule Visit</h1>
     <p class="form-subtitle">Schedule a property viewing with our expert agents</p>
     
