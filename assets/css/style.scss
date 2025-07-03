@@ -558,11 +558,7 @@ body {
             .meta-item {
                 display: flex;
                 align-items: center;
-                
-                i {
-                    margin-right: 0.25rem;
-                    width: 12px;
-                }
+                gap: 0.5rem;
             }
         }
         
