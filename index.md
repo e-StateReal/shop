@@ -11,7 +11,7 @@ description: Your premier real estate affiliate platform for discovering curated
       <i class="fas fa-graduation-cap"></i>
       <span>Education</span>
     </div>
-    <a href="/pages/education-full.html" class="view-all-link">
+    <a href="{{ site.baseurl }}/pages/education-full.html" class="view-all-link">
       <i class="fas fa-arrow-right"></i> View All
     </a>
   </div>
@@ -31,7 +31,7 @@ description: Your premier real estate affiliate platform for discovering curated
       <i class="fas fa-building"></i>
       <span>Properties</span>
     </div>
-    <a href="/pages/properties-full.html" class="view-all-link">
+    <a href="{{ site.baseurl }}/pages/properties-full.html" class="view-all-link">
       <i class="fas fa-arrow-right"></i> View All
     </a>
   </div>

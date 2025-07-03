@@ -3,8 +3,8 @@ title: e-State Real Store
 description: Your premier real estate affiliate platform for discovering curated properties and real estate resources.
 author: e-State Real Store
 email: contact@estatereal.com
-url: "https://e-statereal.github.io/shop" # Replace with your actual GitHub Pages URL
-baseurl: "" # Leave empty if using custom domain
+url: "https://e-statereal.github.io"
+baseurl: "/shop"
 
 # Collections Configuration
 collections:
@@ -16,20 +16,20 @@ collections:
 navigation:
   education:
     - title: "Get Started"
-      url: "/pages/get-started.html"
+      url: "{{ site.baseurl }}/pages/get-started.html"
       icon: "fas fa-rocket"
     - title: "Enroll Now"
-      url: "/pages/enroll.html"
+      url: "{{ site.baseurl }}/pages/enroll.html"
       icon: "fas fa-user-plus"
     - title: "Register"
-      url: "/pages/register.html"
+      url: "{{ site.baseurl }}/pages/register.html"
       icon: "fas fa-user-edit"
   properties:
     - title: "Contact Agent"
-      url: "/pages/contact.html"
+      url: "{{ site.baseurl }}/pages/contact.html"
       icon: "fas fa-phone"
     - title: "Schedule Visit"
-      url: "/pages/schedule.html"
+      url: "{{ site.baseurl }}/pages/schedule.html"
       icon: "fas fa-calendar-alt"
 
 # Educational Materials Configuration
