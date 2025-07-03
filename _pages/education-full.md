@@ -9,8 +9,8 @@ permalink: /pages/education-full.html
     <div class="page-header">
         <h1 class="page-title">🎓 Educational Materials</h1>
         <p class="page-subtitle">Discover all our courses, webinars, and educational resources</p>
-        <a href="/" class="btn btn-outline-primary">
-            <i class="fas fa-arrow-left me-2"></i>Back to Home
+        <a href="{{ site.baseurl }}/" class="btn btn-outline-primary d-inline-flex align-items-center">
+            <i class="fas fa-arrow-left" style="margin-right:0.5em;"></i><span>Back to Home</span>
         </a>
     </div>
     
