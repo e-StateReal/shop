@@ -336,28 +336,34 @@ function initializeDraggableModals() {
     });
 }
 
+// Helper: Get Jekyll baseurl from meta tag or set on window
+if (!window.siteBaseurl) {
+  var baseurlMeta = document.querySelector('meta[name="jekyll-baseurl"]');
+  window.siteBaseurl = baseurlMeta ? baseurlMeta.content : (window.JEKYLL_BASEURL || '');
+}
+
 // Global handlers for new buttons - Redirect to form pages with specific identifiers
 window.handleGetStarted = function(itemId) {
-    const url = `/pages/get-started.html?item=${encodeURIComponent(itemId)}`;
+    const url = `${window.siteBaseurl || ''}/pages/get-started.html?item=${encodeURIComponent(itemId)}`;
     window.location.href = url;
 };
 
 window.handleEnrollNow = function(itemId) {
-    const url = `/pages/enroll.html?item=${encodeURIComponent(itemId)}`;
+    const url = `${window.siteBaseurl || ''}/pages/enroll.html?item=${encodeURIComponent(itemId)}`;
     window.location.href = url;
 };
 
 window.handleRegister = function(itemId) {
-    const url = `/pages/register.html?item=${encodeURIComponent(itemId)}`;
+    const url = `${window.siteBaseurl || ''}/pages/register.html?item=${encodeURIComponent(itemId)}`;
     window.location.href = url;
 };
 
 window.handleContactAgent = function(itemId) {
-    const url = `/pages/contact.html?item=${encodeURIComponent(itemId)}`;
+    const url = `${window.siteBaseurl || ''}/pages/contact.html?item=${encodeURIComponent(itemId)}`;
     window.location.href = url;
 };
 
 window.handleScheduleVisit = function(itemId) {
-    const url = `/pages/schedule.html?item=${encodeURIComponent(itemId)}`;
+    const url = `${window.siteBaseurl || ''}/pages/schedule.html?item=${encodeURIComponent(itemId)}`;
     window.location.href = url;
-}; 
+};
