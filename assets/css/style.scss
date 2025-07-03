@@ -2,6 +2,7 @@
 ---
 
 // Custom variables
+$baseurl: "{{ site.baseurl }}";
 $primary: #2c3e50;
 $secondary: #3498db;
 $accent: #e74c3c;
@@ -37,7 +38,7 @@ html, body {
 .landing-bg.parallax {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
-    background: url('/assets/img/main_bg.png') center center/cover no-repeat;
+    background: url('#{$baseurl}/assets/img/main_bg.png') center center/cover no-repeat;
     filter: brightness(0.4) contrast(1.1) saturate(0.8);
     z-index: 0;
     background-attachment: fixed;
