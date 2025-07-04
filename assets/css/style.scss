@@ -71,7 +71,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
     position: relative;
     z-index: 2;
     //backdrop-filter: blur(12px);
@@ -80,12 +80,12 @@ body {
 
 // --- Avatar ---
 .avatar {
-    width: 130px; height: 130px;
+    width: 100px; height: 100px;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid #fff;
+    border: 4px solid #fff;
     box-shadow: $shadow;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
     background: #fff;
 }
 .avatar img {
@@ -97,10 +97,10 @@ body {
 // --- Title ---
 .main-title {
     color: $primary;
-    font-size: 2.3rem;
+    font-size: 2rem;
     font-weight: 800;
     text-align: center;
-    margin: 0 0 10px 0;
+    margin: 0 0 8px 0;
     letter-spacing: -1px;
     line-height: 1.1;
     text-shadow: 0 2px 12px rgba(0,0,0,0.15);
@@ -109,15 +109,15 @@ body {
 // --- Social icons with brand colors ---
 .social-icons {
     display: flex;
-    gap: 22px;
-    margin-bottom: 10px;
+    gap: 18px;
+    margin-bottom: 8px;
     justify-content: center;
 }
 .social-icons a {
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     border-radius: 50%;
-    width: 44px; height: 44px;
+    width: 38px; height: 38px;
     display: flex; align-items: center; justify-content: center;
     box-shadow: 0 2px 12px rgba(0,0,0,0.13);
     transition: all 0.3s ease;
@@ -169,9 +169,10 @@ body {
 .sections-row {
     width: 100%;
     display: flex;
-    gap: 3rem;
+    gap: 2.5rem;
     justify-content: center;
     align-items: flex-start;
+    margin-top: 0.5rem;
 }
 .section-col {
     flex: 1 1 0;
@@ -185,10 +186,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
     border-bottom: 2px solid $secondary;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 700;
     text-align: left;
     letter-spacing: 0.01em;
@@ -435,12 +436,12 @@ body {
     .central-box {
         max-width: 98%;
         padding: 1.5rem 1rem;
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
     
     .sections-row {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
     
     .section-col {
@@ -449,27 +450,34 @@ body {
     }
     
     .main-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .social-icons {
-        gap: 15px;
+        gap: 12px;
     }
     
     .social-icons a {
-        width: 40px;
-        height: 40px;
-        font-size: 1.3rem;
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+    
+    .avatar {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
     }
 }
 
 @media (max-width: 600px) {
-    .main-title { font-size: 1.3rem; }
-    .avatar { width: 70px; height: 70px; }
-    .section-title { font-size: 1rem; }
+    .main-title { font-size: 1.5rem; }
+    .avatar { width: 70px; height: 70px; margin-bottom: 8px; }
+    .section-title { font-size: 1rem; margin-bottom: 0.8rem; }
     .link-list li { padding: 0.7rem 0.4rem; }
     .social-icons a { width: 32px; height: 32px; font-size: 1rem; }
-    .central-box { border-radius: 0.7rem; }
+    .central-box { border-radius: 0.7rem; gap: 1rem; }
+    .sections-row { gap: 1rem; }
     .modal-header, .modal-body, .modal-footer { padding: 1rem; }
     .modal-footer { flex-direction: column; }
     .modal-footer .btn { width: 100%; margin-bottom: 0.5rem; }
@@ -486,8 +494,11 @@ body {
 // Items preview container
 .items-preview {
     min-height: 150px;
-    max-height: 400px;
+    max-height: 500px;
     overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    padding: 0.5rem 0.5rem 1rem 0.5rem;
     
     .loading-placeholder {
         display: flex;
@@ -607,4 +618,357 @@ body {
         margin: 0;
         font-style: italic;
     }
-} 
+}
+
+
+// --- Improved Preview cards for Education and Properties (dynamic) ---
+.preview-card {
+  background: linear-gradient(120deg, #fffbe7 0%, #f8f9fa 100%);
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1.5px solid #f2e9c7;
+  transition: box-shadow 0.22s, transform 0.22s;
+  position: relative;
+  width: 100%;
+  min-height: 140px;
+  box-sizing: border-box;
+  
+  &:hover {
+    box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+    transform: translateY(-3px);
+    border-color: #ffe082;
+  }
+  
+  &.featured {
+    border: 2.5px solid #ffc107;
+    box-shadow: 0 12px 36px rgba(255,193,7,0.13);
+  }
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.preview-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fffbe7;
+  overflow: hidden;
+  z-index: 1;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #f3f3f3;
+    display: block;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 251, 231, 0.85) 0%, rgba(255, 251, 231, 0.95) 50%, rgba(255, 251, 231, 0.98) 100%);
+    pointer-events: none;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.15), transparent);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .preview-card:hover &::before {
+    opacity: 1;
+  }
+}
+.preview-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  word-break: break-word;
+  padding: 1rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+.preview-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  .badge {
+    font-size: 0.8em;
+    margin-left: 0.3em;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+  .badge.featured {
+    background: none;
+    color: #ffc107;
+    font-size: 1.1em;
+    margin-left: 0.2em;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2em;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+  .badge.featured:before {
+    content: '\2605'; /* Unicode black star */
+    font-size: 1.1em;
+    color: #ffc107;
+    margin-right: 0;
+    display: inline-block;
+  }
+}
+.preview-desc {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  word-break: break-word;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+.preview-meta {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  overflow: hidden;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+  .badge {
+    font-size: 0.75em;
+    background: rgba(255, 224, 130, 0.9);
+    color: #444;
+    font-weight: 600;
+    padding: 0.2em 0.4em;
+    border-radius: 0.5em;
+    flex-shrink: 0;
+    backdrop-filter: blur(4px);
+  }
+}
+.preview-date {
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+// --- Responsive adjustments for preview cards ---
+@media (max-width: 900px) {
+  .items-preview {
+    padding: 0.4rem 0.4rem 0.8rem 0.4rem;
+  }
+  
+  .preview-card {
+    border-radius: 12px;
+    margin-bottom: 0.8rem;
+    min-height: 120px;
+  }
+  .preview-info {
+    padding: 0.8rem;
+  }
+  .preview-title {
+    font-size: 1rem;
+    white-space: normal;
+    text-overflow: initial;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+}
+@media (max-width: 600px) {
+  .items-preview {
+    padding: 0.3rem 0.3rem 0.6rem 0.3rem;
+  }
+  
+  .preview-card {
+    border-radius: 8px;
+    margin-bottom: 0.6rem;
+    min-height: 100px;
+  }
+  .preview-info {
+    padding: 0.6rem;
+  }
+  .preview-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+  .preview-desc {
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+  }
+  .preview-meta {
+    font-size: 0.7rem;
+    margin-bottom: 0.4rem;
+  }
+  .preview-date {
+    font-size: 0.7rem;
+    margin-bottom: 0.4rem;
+  }
+}
+
+// --- Features badge as star icon ---
+.preview-meta .badge.features {
+  background: none;
+  color: #ffc107;
+  font-size: 1em;
+  padding: 0;
+  margin-left: 0.2em;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2em;
+  flex-shrink: 0;
+}
+.preview-meta .badge.features:before {
+  content: '\2605'; /* Unicode black star */
+  font-size: 1em;
+  color: #ffc107;
+  margin-right: 0.15em;
+  display: inline-block;
+}
+
+// --- Prevent horizontal scroll on all preview elements ---
+.preview-card,
+.preview-info,
+.preview-img,
+.preview-title,
+.preview-desc,
+.preview-meta,
+.preview-date {
+  max-width: 100%;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+}
+
+// --- Ensure proper text wrapping ---
+.preview-title,
+.preview-desc,
+.preview-meta {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+// --- CTA button optimization ---
+.preview-card .btn {
+  align-self: flex-start;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  
+  // Learn More - Azul educativo
+  &.btn-learn-more {
+    background: rgba(52, 152, 219, 0.9) !important;
+    border: 1px solid rgba(52, 152, 219, 0.3) !important;
+    color: white !important;
+    
+    &:hover {
+      background: rgba(52, 152, 219, 1) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    }
+  }
+  
+  // Shop - Verde comercial
+  &.btn-shop {
+    background: rgba(46, 204, 113, 0.9) !important;
+    border: 1px solid rgba(46, 204, 113, 0.3) !important;
+    color: white !important;
+    
+    &:hover {
+      background: rgba(46, 204, 113, 1) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+    }
+  }
+  
+  // Sign Up - Naranja acción
+  &.btn-sign-up {
+    background: rgba(230, 126, 34, 0.9) !important;
+    border: 1px solid rgba(230, 126, 34, 0.3) !important;
+    color: white !important;
+    
+    &:hover {
+      background: rgba(230, 126, 34, 1) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+    }
+  }
+  
+
+}
+
+// --- Custom scrollbar styling ---
+.items-preview {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(52, 152, 219, 0.6) rgba(255, 255, 255, 0.2);
+  
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 4px 0;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.8), rgba(52, 152, 219, 0.6));
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    &:hover {
+      background: linear-gradient(135deg, rgba(52, 152, 219, 1), rgba(52, 152, 219, 0.8));
+    }
+  }
+  
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}

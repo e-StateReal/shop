@@ -82,3 +82,9 @@ e-statereal/
 ---
 
 **Note**: e-State Real Store is your trusted partner in real estate discovery and investment opportunities.
+
+## SHA-256 hash of the password 'Mazorr@33186' (hex)
+
+```powershell
+powershell -Command "[BitConverter]::ToString((New-Object Security.Cryptography.SHA256Managed).ComputeHash([Text.Encoding]::UTF8.GetBytes('your-password-here'))).Replace('-','').ToLower()"
+```

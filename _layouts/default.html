@@ -43,7 +43,14 @@
     {% include modals.html %}
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Jekyll configuration - available globally
+      window.siteBaseurl = '{{ site.baseurl }}';
+      window.siteUrl = '{{ site.url }}';
+      console.log('Jekyll config loaded:', { baseurl: window.siteBaseurl, url: window.siteUrl });
+    </script>
     <script src="{{ site.baseurl }}/assets/js/items-data.js"></script>
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/admin-panel.js"></script>
 </body>
 </html> 
